@@ -1,0 +1,92 @@
+// ----Stars
+.container-rated {
+    margin: 1rem 0 0.5rem;
+    @include alignChildren (center, flex-start);
+    color: $color5;
+
+    .stars,
+    .empty-stars {
+        font-size: 1.2rem;
+        margin-right: 2px;
+    }
+
+    .stars {
+        color: $color2;
+    }
+
+    .empty-stars {
+        color: $color5;
+    }
+
+    span {
+        @include alignChildren (center, center);
+    }
+
+    .rated {
+        margin-left: 9px;
+    }
+
+    .separate-rate {
+        border-radius: 100%;
+        height: 0.4rem;
+        width: 0.4rem;
+        background-color: $color5;
+        margin: 0 10px;
+    }
+}
+
+
+// ----Heart
+.bg-heart {
+    position: absolute;
+    @include alignChildren(center, center);
+    background-color: $color1;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%);
+    top: 15%;
+    right: 0;
+    height: 2.2rem;
+    width: 3.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $colorhover2;
+    }
+}
+
+.heart {
+    font-size: 1.6rem;
+    color: $color2;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.park-title .heart,
+.park-head .heart {
+    background-color: $color1;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%);
+    border-radius: 100%;
+    padding: 5px;
+    font-size: 1.4rem;
+
+    &:hover {
+        background-color: $colorhover2
+    }
+}
+
+
+
+.theme-park-title {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0.8rem 0;
+    background-color: $colortheme1;
+    color: $color1;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 0.8rem;
+    padding: 5px 8px;
+}

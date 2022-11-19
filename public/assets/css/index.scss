@@ -1,0 +1,18 @@
+// Settings
+@import "./settings";
+
+// Component
+@import "./component/icon";
+@import "./component/cardpark";
+@import "./component/buttons";
+
+// Layout
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/form";
+@import "./layout/addFavorite";
+
+// Pages
+@import "./pages/home";
+@import "./pages/descriptionpark";
+@import "./pages/favoritepark"

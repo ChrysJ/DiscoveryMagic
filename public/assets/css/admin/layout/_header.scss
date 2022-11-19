@@ -1,0 +1,78 @@
+// Side nav
+.side-nav {
+    padding-top: 4rem;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    background-color: $color1;
+    border-right: 2px solid $color2;
+    width: 13rem;
+
+    img {
+        margin-bottom: 1rem;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    ul {
+        a {
+            li {
+                padding: 1.5rem 2rem;
+
+                &.active {
+                    background-color: $colorhover2;
+                }
+
+                i {
+                    width: 2rem;
+                    font-size: 1.3rem;
+                    text-align: center;
+                    color: $color2;
+                }
+
+                span {
+                    font-weight: 600;
+                    margin-left: 1rem;
+                    color: $color3;
+                }
+            }
+        }
+    }
+}
+
+// Filter nav
+.filter-nav {
+    z-index: 1;
+    background-color: $color1;
+    height: 3.5rem;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%);
+
+    ul {
+        height: 100%;
+        @include alignChildren(center, flex-start);
+        padding: 0 7rem 0 20rem;
+
+        li {
+            height: 100%;
+
+            span {
+                @include alignChildren(center, center);
+                font-family: $font2;
+                color: $color3;
+                font-size: 0.9rem;
+                height: 100%;
+                padding: 0 1.5rem;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $colorhover2;
+                }
+
+                &.active {
+                    background-color: $colorhover2;
+                    border-bottom: 3px solid $color2;
+                }
+            }
+        }
+    }
+}

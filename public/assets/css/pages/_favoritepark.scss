@@ -1,0 +1,20 @@
+.favorites-title {
+    @include alignChildren (center, center);
+    flex-direction: column;
+
+    .link-text {
+        color: $color3;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+
+        &:hover {
+            color: $color2;
+        }
+    }
+
+    img {
+        margin: 2rem 0 2.5rem;
+        width: 15%;
+        width: max(5rem, min(4rem));
+    }
+}

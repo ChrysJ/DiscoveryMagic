@@ -1,0 +1,308 @@
+.main-description-park {
+
+    // ----------------------------------
+    //  SECTION PARK
+    // ----------------------------------
+    .section-park {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        .description-park {
+            flex-direction: column;
+            margin-right: 2rem;
+
+            .park-title {
+                @include alignChildren (center, space-between);
+
+                h1 {
+                    font-size: 2.2rem;
+                }
+            }
+
+            hr {
+                margin: 1.5rem 0;
+                height: 2px;
+                background-color: $color4;
+                border: none;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            // ----------------------------------
+            //  Informations park
+            // ----------------------------------
+            .informations-park {
+
+                ul {
+
+                    li {
+                        margin: 0.5rem 0;
+
+                        i {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                            text-align: center;
+                            margin-right: 1rem;
+                            color: $color2;
+                            font-size: 1.2rem;
+                        }
+
+                        a {
+                            text-decoration: underline 2px solid;
+                            color: $color3;
+                            text-underline-offset: 3px;
+
+                            &:hover {
+                                color: $color2;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ----------------------------------
+            //  Description park
+            // ----------------------------------
+            .short-info-text-park {
+                .seemore {
+                    font-weight: 600;
+                    color: $color2;
+                    cursor: pointer;
+                    display: none;
+                    width: fit-content;
+
+                    &:hover {
+                        color: $colorhover;
+                    }
+                }
+            }
+        }
+    }
+
+    // ----------------------------------
+    //  Swiper img
+    // ----------------------------------
+    .swiper.swiper-description-park {
+        width: 100%;
+        box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%);
+        max-height: 35rem;
+
+        .swiper-slide {
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        // Bullet pagination
+        .swiper-pagination-bullet {
+            background-color: hsla(0, 0%, 84%, .8) !important;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: $color2 !important;
+            width: 17px !important;
+            border-radius: 10px !important;
+        }
+    }
+
+    // ----------------------------------
+    //  MAP
+    // ----------------------------------
+    #mapid {
+        height: 20rem;
+        box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%);
+        border-radius: 15px;
+    }
+
+    // ----------------------------------
+    //  SECTION AVIS
+    // ----------------------------------
+    .share-opinion {
+        .box-share-opinion {
+            display: grid;
+            grid-template-columns: 30% 70%;
+
+            // Notes global utilisateurs
+            .box-note-park {
+                margin-bottom: 2rem;
+
+                h5 {
+                    color: $color3;
+                    margin-top: 1rem;
+                }
+
+                hr {
+                    margin: 1.5rem 0;
+                    height: 2px;
+                    background-color: $color4;
+                    border: none;
+                    width: 5%;
+                }
+            }
+
+            // Formulaire avis
+            .box-opinions {
+                width: 60%;
+
+                .form-user {
+                    width: 100%;
+                    background-color: $color1;
+                    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%);
+                    height: fit-content;
+                    padding: 1.5rem;
+                    border-radius: 15px;
+                    margin-bottom: 2rem;
+                    margin-top: 0;
+
+                    &.form-user-disconnected {
+                        @include alignChildren (center, center);
+                        flex-direction: column;
+                        width: 100%;
+
+                        img {
+                            width: 10%;
+                        }
+
+                        .text-form-user-disconnected {
+                            margin: 2rem 0;
+                            font-weight: 600;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                // Note utilisateur
+                .container-rated {
+                    display: flex;
+                    margin-top: 0.5rem;
+
+                    .star-rated {
+                        font-size: 1.5rem;
+                    }
+
+                    .selected-stars {
+                        @include alignChildren (center, flex-start);
+                        display: none;
+                    }
+                }
+
+                // ----------------------------------
+                //  AVIS utilisateur text
+                // ----------------------------------
+                .user-opinion {
+                    padding: 2rem 0;
+                    border-bottom: 2px solid $color4;
+
+                    .user-profile {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-end;
+                        margin-bottom: 1rem;
+
+                        img {
+                            width: 3rem;
+                            height: 3rem;
+                            margin-right: 1rem;
+                            border-radius: 100%;
+                            border: 2px solid $color2;
+                        }
+
+                        h4 {
+                            font-size: 1.3rem;
+                        }
+                    }
+
+                    .container-rated {
+                        margin-bottom: 1rem;
+
+                        i {
+                            font-size: 1rem;
+                        }
+
+                        h5 {
+                            color: $color3;
+                            font-size: 1rem;
+                        }
+                    }
+
+                    .date-opinion {
+                        color: $color5;
+                        font-size: 0.8rem;
+                    }
+
+                    .opinion {
+                        margin: 1rem 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 1300px) {
+    .main-description-park {
+        .park {
+            width: 100%;
+        }
+
+        .share-opinion {
+            .box-share-opinion {
+                .box-opinions {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .main-description-park {
+        .section-park {
+            grid-template-columns: 1fr;
+
+            .description-park {
+                margin-right: 0;
+
+                .park-title {
+                    .park-name {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+
+        .swiper.swiper-description-park {
+            margin-top: 2rem;
+        }
+
+        .share-opinion {
+            .box-share-opinion {
+                grid-template-columns: 1fr;
+
+                .box-opinions {
+                    .user-opinion {
+                        .container-rated {
+                            display: inline;
+
+                            .separate-rate {
+                                display: none;
+                            }
+
+                            h5 {
+                                margin: 1rem 0 0.3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+// Footer
+footer {
+    background-color: $color3;
+    padding: 5rem 0 2.5rem;
+    width: 100%;
+    border-top: 2px solid $color2;
+    text-align: center;
+
+    .container-footer {
+        @include alignChildren (center, space-evenly);
+        margin-bottom: 5rem;
+
+        .footer-right {
+            @include alignChildren (center, flex-end);
+            flex-direction: column;
+
+            h5 {
+                margin-bottom: 1rem;
+            }
+
+            a {
+                font-family: $font1;
+                font-size: 1rem;
+                text-transform: none;
+                color: $color2;
+                margin-bottom: 0.5rem;
+
+                &:hover {
+                    color: $colorhover;
+                }
+            }
+        }
+
+        .footer-left {
+
+            p {
+                color: $color1;
+            }
+
+            ul {
+                margin-top: 1.5rem;
+                @include alignChildren (center, space-evenly);
+
+                li,
+                a,
+                i {
+                    @include alignChildren (center, center);
+                    color: $color2;
+
+                    i {
+                        font-size: 1.5rem;
+
+                        &:hover {
+                            color: $colorhover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright {
+        color: $color5;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    footer {
+        padding: 5rem 0;
+        width: 100%;
+    }
+
+    .container-footer {
+        flex-direction: column;
+
+        .footer-left {
+            margin-bottom: 5rem;
+        }
+    }
+}

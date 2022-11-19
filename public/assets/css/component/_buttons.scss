@@ -1,0 +1,54 @@
+// --------------BUTTONS
+
+a {
+    text-decoration: none;
+}
+
+.btn,
+.submit button,
+.submit-contact button,
+.btn-delete {
+    font-weight: 600;
+    text-align: center;
+    font-family: $font1;
+    font-size: 1rem;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%);
+    border-radius: 30px;
+    padding: 0.8rem 30px;
+    cursor: pointer;
+    transition: 300ms;
+    margin: 1rem;
+}
+
+.btn,
+.submit button,
+.submit-contact button {
+    background-color: $color2;
+    border: none;
+    color: $color1;
+}
+
+.btn-delete {
+    background-color: $color1;
+    border: 2px solid $colortheme1;
+    color: $color3;
+
+    &:hover {
+        background-color: $colortheme1;
+        color: $color1;
+    }
+}
+
+.btn:visited,
+.submit button:visited,
+.submit-contact button:visited {
+    background-color: $color2;
+    color: $color1;
+}
+
+.btn:hover,
+.submit button:hover,
+.submit-contact button:hover {
+    background-color: $colorhover;
+    transition: 300ms;
+}

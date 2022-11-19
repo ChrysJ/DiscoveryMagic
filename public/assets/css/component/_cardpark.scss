@@ -1,0 +1,50 @@
+// Main container
+.park-list {
+    @include alignChildren (center, space-between);
+    grid-gap: 2rem;
+    padding: 1rem 0.5rem;
+    overflow-x: unset;
+
+    // card park
+    .card-park {
+        background-color: $color1;
+        box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%);
+        border-radius: 15px;
+        height: max-content;
+        min-width: 19rem;
+        max-width: 21rem;
+        margin: 0 auto;
+
+        &:hover img {
+            transform: scale(1.1);
+        }
+
+        .img-card-park {
+            border-radius: 15px 15px 0 0;
+            position: relative;
+
+            img {
+                height: 10rem;
+            }
+        }
+
+        .card-park-info {
+            padding: 1.5rem;
+
+            .short-info-text-park {
+                margin: 1rem 0 3rem;
+            }
+
+            .btn-card-park {
+                @include alignChildren (center, center);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .park-list {
+        grid-gap: 1rem;
+        overflow-x: scroll;
+    }
+}

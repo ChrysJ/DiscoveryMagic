@@ -1,0 +1,315 @@
+// ----------------------------------
+// Herobanner
+// ----------------------------------
+.herobanner {
+    @include alignChildren (center, center);
+    flex-direction: column;
+    height: 90vh;
+    background-color: $color3;
+    position: relative;
+    margin: 0;
+
+    h1,
+    p {
+        z-index: 1;
+        text-shadow: 0 0 4px $color3;
+        text-align: center;
+    }
+
+    h1 {
+        color: $color2;
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: $color1;
+        font-size: 1.5rem;
+    }
+
+    video {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    img {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+// ----------------------------------
+// Stepper
+// ----------------------------------
+.stepper {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    font-family: $font2;
+
+    .step {
+        display: flex;
+        padding: 2rem;
+        border-bottom: 1px solid $color4;
+        grid-column: 1/2;
+
+        &:hover {
+            background-color: $colorhover2;
+        }
+
+        &:hover h2 {
+            color: $color2;
+        }
+
+        span {
+            @include alignChildren (center, center);
+            background-color: $color1;
+            min-width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 100%;
+            border: 3px solid $color2;
+            margin-right: 2rem;
+            align-self: center;
+            justify-self: center;
+            font-size: 1.5rem;
+            color: $color3;
+        }
+
+        div {
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            h2.title-step-active {
+                color: $color2;
+            }
+
+            p {
+                font-family: $font1;
+            }
+        }
+    }
+
+    .step-img {
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        max-height: 20rem;
+        grid-column: 2/3;
+        grid-row: 1/4;
+        transform: rotate(10deg);
+    }
+}
+
+// ---------------------------------------
+// Main container selected park
+// ---------------------------------------
+.selected-park {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .selected-park-left {
+        @include alignChildren (center, center);
+        flex-direction: column;
+
+        .map-france-selected {
+            width: 100%;
+            max-width: 30rem;
+        }
+
+        // ---------------------------------------
+        // Select region
+        // ---------------------------------------
+        .select-region {
+            color: $color3;
+            position: relative;
+
+            .select-style {
+                position: relative;
+                width: 100%;
+
+                i {
+                    position: absolute;
+                    right: 5%;
+                    bottom: 50%;
+                    transform: translatey(75%);
+                    color: $color5;
+                }
+
+                select {
+                    margin-top: 0.5rem;
+                    width: 17rem;
+                    padding: 10px;
+                    border: 1px solid $color2;
+                    color: $color3;
+                    -webkit-appearance: none;
+                    border-radius: 5px;
+                    touch-action: manipulation;
+                    font-family: $font1;
+
+                    &:focus {
+                        outline: 0.1rem solid $color2;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    // -----------------------------------------
+    // Main container list ranked park 
+    // -----------------------------------------
+    .selected-park-right {
+        .list-park {
+            display: grid;
+            grid-template-rows: repeat(auto, 1fr);
+
+            // Park
+            .park {
+                padding: 1.5rem 1rem;
+                display: grid;
+                grid-template-columns: 35% 65%;
+                border-bottom: 1px solid $color4;
+
+                &:hover {
+                    background-color: $colorhover2;
+                }
+
+                &:hover img {
+                    transform: scale(1.1);
+                }
+
+                &:hover a {
+                    color: $color2 !important;
+                    text-decoration: underline;
+                    text-decoration-color: $color2;
+                    text-decoration-thickness: 3px;
+                    text-underline-offset: 3px;
+                }
+
+                .container-img-park {
+                    @include alignChildren(center, center);
+                    grid-row: 1/5;
+                    margin: auto 2rem auto 0;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        max-height: 10rem;
+                        min-height: 10rem;
+                        object-fit: cover;
+                     
+                    }
+                }
+
+                .park-head {
+                    @include alignChildren(center, space-between);
+
+                    a {
+                        color: $color3;
+                        font-size: 1.5rem;
+                        font-family: $font2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive
+@media screen and (max-width: 1250px) {
+
+    .stepper {
+        grid-template-columns: 100%;
+
+        .step {
+            span {
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            div {
+                h2 {
+                    text-align: center;
+                }
+            }
+        }
+
+        .step-img {
+            display: none;
+        }
+    }
+
+    .selected-park {
+        grid-template-columns: 1fr;
+
+        .selected-park-left {
+            margin-bottom: 3rem;
+        }
+    }
+
+    .selected-park {
+        .selected-park-right {
+            .list-park {
+                .park-name {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    .herobanner {
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+    }
+
+    .stepper {
+        .step {
+            flex-direction: column;
+
+            .number-step {
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            div .title-step {
+                text-align: center;
+            }
+        }
+    }
+
+    .selected-park {
+        .selected-park-right {
+            .list-park {
+                .park {
+                    grid-template-columns: 100%;
+
+                    .container-img-park {
+                        margin-right: 0;
+
+                        img {
+                            margin-bottom: 2rem;
+                            max-height: 300px;
+                            max-width: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
